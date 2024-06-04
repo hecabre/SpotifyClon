@@ -1,4 +1,5 @@
 import { useApi } from "../context/ApiContext";
+import { FaSearch } from "react-icons/fa";
 
 function GenderInput() {
   const { gender, setGender } = useApi();
@@ -6,12 +7,12 @@ function GenderInput() {
     setGender(event.target.value);
   };
   return (
-    <form className="max-w-sm mx-auto">
+    <form className="text-purple-heart-800/80 dark:text-white">
       <select
         name="gender"
         value={gender}
         onChange={handleGenderChange}
-        className="backdrop-blur-lg dark:bg-white/5 bg-white/30 block w-full p-2.5 rounded-lg dark:text-white text-purple-heart-800/80"
+        className="backdrop-blur-lg dark:bg-white/5 bg-white/30 block w-full p-2.5 rounded-lg dark:text-white text-purple-heart-800/80 dark:hover:text-purple-heart-800/80"
       >
         <option value="all">All</option>
         <option value="rap">Rap</option>

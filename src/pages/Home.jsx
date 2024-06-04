@@ -32,9 +32,10 @@ function Home() {
         <Sidebar />
       </div>
       <section className="col-span-3 flex flex-col pt-5">
-        <GenderInput />
-        <SearchInput />
-
+        <div className="flex justify-between items-center">
+          <SearchInput />
+          <GenderInput />
+        </div>
         {leaderboard.data ? <h1>Hay datos</h1> : <Loader />}
       </section>
       <ControlsBar />
