@@ -1,6 +1,28 @@
-import { useContext, createContext, useState, useEffect } from "react";
-function ApiContext() {
-  return <div>ApiContext</div>;
-}
+import { useContext, createContext, useState } from "react";
+import { getLeaderboard } from "../api/getLeaderboard";
 
-export default ApiContext;
+export const ApiContext = createContext();
+
+export const useApi = () => {
+  const context = useContext(ApiContext);
+  if (!context) throw new Error("Use api must be used within context");
+  return context;
+};
+
+export const ApiProvider = ({ children }) => {
+  const [leaderboard, setLeaderboard] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const getLeaderboardQuery = async (pageId) => {
+    const res = await getLeaderboard(pageId);
+    setLeaderboard(res);
+  };
+
+  return (
+    <ApiContext.Provider
+      value={{ leaderboard, getLeaderboardQuery, loading, setLoading }}
+    >
+      {children}
+    </ApiContext.Provider>
+  );
+};

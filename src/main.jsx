@@ -5,17 +5,20 @@ import "./index.css";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "./context/ThemeContext.jsx";
 import { PlayerProvider } from "./context/PlayerContext.jsx";
+import { ApiProvider } from "./context/ApiContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <ThemeProvider>
-      <PlayerProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Home />} />
-          </Routes>
-        </BrowserRouter>
-      </PlayerProvider>
-    </ThemeProvider>
+    <ApiProvider>
+      <ThemeProvider>
+        <PlayerProvider>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Home />} />
+            </Routes>
+          </BrowserRouter>
+        </PlayerProvider>
+      </ThemeProvider>
+    </ApiProvider>
   </React.StrictMode>
 );
