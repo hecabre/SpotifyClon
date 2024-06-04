@@ -12,15 +12,23 @@ export const useApi = () => {
 export const ApiProvider = ({ children }) => {
   const [leaderboard, setLeaderboard] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [gender, setGender] = useState("all");
 
-  const getLeaderboardQuery = async (pageId) => {
-    const res = await getLeaderboard(pageId);
+  const getLeaderboardQuery = async (pageId, gender) => {
+    const res = await getLeaderboard(pageId, gender);
     setLeaderboard(res);
   };
 
   return (
     <ApiContext.Provider
-      value={{ leaderboard, getLeaderboardQuery, loading, setLoading }}
+      value={{
+        leaderboard,
+        getLeaderboardQuery,
+        loading,
+        setLoading,
+        setGender,
+        gender
+      }}
     >
       {children}
     </ApiContext.Provider>
