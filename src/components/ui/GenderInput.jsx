@@ -1,5 +1,4 @@
-import { useApi } from "../context/ApiContext";
-import { FaSearch } from "react-icons/fa";
+import { useApi } from "../../context/ApiContext";
 
 function GenderInput() {
   const { gender, setGender } = useApi();

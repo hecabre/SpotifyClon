@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FiMenu, FiX, FiHome, FiMusic } from "react-icons/fi";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
-import { useTheme } from "../context/ThemeContext";
+import { useTheme } from "../../context/ThemeContext";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
