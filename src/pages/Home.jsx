@@ -31,13 +31,16 @@ function Home() {
       <div className="col-span-1 hidden lg:block ">
         <Sidebar />
       </div>
-      <section className="lg:col-span-3 col-span-4 lg:px-0 px-10 flex flex-col pt-5 justify-between">
-        <div className="flex justify-around flex-wrap gap-3 md:gap-0 lg:gap-0 md:justify-between lg:justify-between  items-center ">
-          <SearchInput />
-          <GenderInput />
+      <section className="lg:col-span-3 col-span-4 lg:px-0 px-10 pt-5 justify-between">
+        <div className="flex flex-col">
+          <div className="flex justify-around flex-wrap gap-3 md:gap-0 lg:gap-0 md:justify-between lg:justify-between  items-center pe-0 md:pe-10 lg:pe-14">
+            <SearchInput />
+            <GenderInput />
+          </div>
+          <h2>sdads</h2>
         </div>
-        {leaderboard.data ? <h1>Hay datos</h1> : <Loader />}
       </section>
+
       <ControlsBar />
     </div>
   );
