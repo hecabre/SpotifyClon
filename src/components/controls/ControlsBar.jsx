@@ -6,11 +6,11 @@ import VolumeControl from "./VolumenControl";
 function ControlsBar() {
   const { play, pause, next, state, previous } = usePlayer();
   return (
-    <section className="absolute bottom-0 left-0 right-0 flex justify-center w-screen">
-      <div className="backdrop-blur-lg bg-white/5 p-4 rounded-t-lg shadow-2xl w-screen ">
-        <ul className=" flex justify-between px-10 md:px-20 dark:text-white text-purple-heart-800/80">
+    <section className="sticky bottom-0 left-0 right-0 z-50 w-screen">
+      <div className="backdrop-blur-lg bg-white/5 p-4 rounded-t-lg shadow-2xl w-screen">
+        <ul className="flex justify-between px-10 md:px-20 dark:text-white text-purple-heart-800/80">
           <div>{state.isPlaying ? "hay musica" : "xd"}</div>
-          <div className="items-center justify-center flex gap-3 md:gap-10">
+          <div className="flex items-center justify-center gap-3 md:gap-10">
             <GiPreviousButton
               className="md:text-2xl text-xl cursor-pointer"
               onClick={previous}
