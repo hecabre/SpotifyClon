@@ -15,9 +15,9 @@ const VolumeControl = () => {
   };
 
   return (
-    <div className="flex items-center space-x-3 w-full justify-center relative">
+    <div className="flex items-center space-x-3 w-full justify-center relative ">
       <FaVolumeUp
-        className="sm:block md:hidden text-lg cursor-pointer"
+        className="sm:block md:hidden text-lg cursor-pointer "
         onClick={handleOpen}
       />
       <FaVolumeUp className="hidden md:block text-2xl cursor-pointer" />
